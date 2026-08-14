@@ -48,6 +48,7 @@ Include         -> PreProc
 Define          -> PreProc
 Macro           -> PreProc
 
+Function        -> Type
 Structure       -> Type
 Typedef         -> Type
 
@@ -56,60 +57,91 @@ SpecialComment  -> Delimeter
 Debug           -> Delimeter
 
 Todo            -> Delimeter
+
+Error           -> ErrorMsg
+
+Added           -> DiffAdd
+Changed         -> DiffChange
+Removed         -> DiffDelete
+
 ;;; Default Groups
+
+; Yi Sang's color for normal text. No specific reason, and unfortunately this excludes him from
+; other fun stuff
 Normal        whitedark     blacklite
 ColorColumn   whitelite     blackdark       bold
-Conceal       browndark     blacklite
+; Gregor: Much of his pain is concealed and his own arm's abilities remain concealed
+Conceal       browndark     whitelite
 Cursor        whitedark     blacklite       reverse
 
+; Faust: navigating information
 Directory     magentalite   blacklite       bold
 
-DiffAdd       yellowdark    blacklite       reverse
-DiffChange    bluedark      blacklite       reverse
-DiffDelete    brownlite     blacklite       reverse
-DiffText      greenlite     blacklite       reverse
+DiffAdd       yellowdark    whitelite       reverse
+; Meursault: Changed text; rote repetition of fact.
+DiffChange    bluedark      whitelite       reverse
+DiffDelete    brownlite     whitelite       reverse
+; Heathcliff: No particular reason, needed a dark color to match the scheme
+DiffText      magentadark   whitelite       reverse
 
-EndOfBuffer   greenlite     blacklite
+; Sinclair: An end is a beginning; "One who seeks to be born must first destroy a world"
+EndOfBuffer   greenlite     blackdark
 
-ErrorMsg      redlite       whitelite       reverse
+; Rodion: Something is not quite right with her (also red text usually is reserved for errors)
+ErrorMsg      reddark       whitelite       reverse
 
+; Ryoshu: How could I not make "Vertical Split" Ryoshu's color?
 VertSplit     redlite       blackdark       reverse
 
-Folded        greendark     whitelite       reverse
+; Outis: Summarizing this section for you, Manager
+Folded        greendark     whitelite       reverse,bold
 
+; Outis: Same as above (a column within a folded bit of information)
 FoldColumn    greendark     blackdark
 
+; Ishmael: Knowledgable about directions
 SignColumn    orangelite    whitelite       reverse
 
-IncSearch     greenlite     yellowlite      reverse,bold
+; Hong Lu: Searching with the precious jade eye
+IncSearch     cyanlite      whitelite       reverse,bold
 
+; Ishamel: Charting a course (line numbers help navigation)
 LineNr        orangelite    blacklite      
-CursorLineNr  orangelite    blacklite        bold
+CursorLineNr  orangelite    blacklite       bold
 
 MessageWindow yellowdark    blacklite       italic
 
 ModeMsg       whitedark     blacklite       bold
+; Faust: Accumulating Messages
 MsgArea       magentalite   blackdark
 
-PmenuKind     cyanlite      blackdark
+PmenuKind     cyandark      blackdark
 PmenuThumb    cyandark      blackdark       reverse
 
-PopupSelected yellowdark    bluedark        reverse
+; Heathcliff: Oi! Clockhead!
+PopupSelected magentadark   whitelite       reverse,bold
 PopupNotification
-              yellowdark    bluedark
+              magentadark   whitelite
 
 Question      bluelite      blacklite       italic
 
+; Don Quixote: Manager Esquire! This requires your attention!
 QuickFixLine  yellowlite    blacklite       reverse
 
-Search        greenlite     yellowlite      reverse
-CurSearch     greenlite     yellowlite      bold
+; Hong Lu: Same as above (searching with the precious jade eye)
+Search        cyanlite      whitelite       reverse
+CurSearch     cyanlite      whitelite       bold
 
-SpellBad      redlite       blacklite       underline
-SpellCap      greendark     blacklite       underline
-SpellLocal    magentadark   blacklite       underline
-SpellRare     bluelite      blacklite       underline
+; Rodion: Same color as error text...
+SpellBad      reddark       whitelite       underline
+; Outis: Attention! This word requires prompt capitalization! (Also fits colorscheme)
+SpellCap      greendark     whitelite       underline
+; Heathcliff: What'dya mean this shite is a "local" spelling?
+SpellLocal    magentadark   whitelite       underline
+; Meursault: Rare spelling; knowledgable on technicality
+SpellRare     bluedark      whitelite       underline
 
+; Faust: Commanding and directing Limbus
 StatusLine    magentalite   whitelite       reverse,bold
 StatusLineNC  magentalite   whitelite       bold
 
@@ -118,41 +150,50 @@ StatusLineTerm
 StatusLineTermNC
               tandark       whitedark       bold
 
-TabLine       cyanlite      blackdark       reverse
-TabLineSel    cyanlite      blackdark       bold
+; Ishmael: Deciding which path to take (choosing between options)
+TabLine       orangelite    blackdark       reverse
+TabLineSel    orangelite    blackdark       bold
 
-Title         reddark       blacklite
+; Outis:  I am quite knowledgable about rank and title on the field of battle!
+Title         greendark     whitelite       italic
 
-Visual        magentadark   blacklite       reverse
+; Hong Lu: This actually fits Meursault better (gaze bearing) but
+; I like Search and Visual selections to appear the same
+Visual        cyanlite      blacklite       reverse
+; Gregor: Fit the colorscheme here...
 VisualNOS     browndark     whitelite       reverse,bold
 
-WarningMsg    yellowlite    blacklite
+; Meursault: Warning; informs the manager of potential issues
+WarningMsg    bluedark      whitelite
 
 ;;; Special Groups
+; Outis: Here is a detailed report Manager!
 Comment       greendark     blacklite
 
+; Hong Lu: Constant because he never lost his kindness (and because I like this color)
 Constant      cyanlite      blacklite
 Boolean       orangedark    blacklite
 
-Function      magentadark   blacklite       bold
 Identifier    tanlite       blacklite
 
 Statement     bluelite      blacklite
+; Sinclair: Represents change and potential (makes sense for a light green to be for operators)
 Operator      greenlite     blacklite
 
-PreProc       reddark       blacklite
-PreCondit     reddark       blacklite       reverse,bold
+; Ryoshu: Handles preprocessing because of her relationship with time
+PreProc       redlite       blacklite
+PreCondit     redlite       blacklite       reverse,bold
 
+; Faust: No reason for type (perhaps how strongly she typecasts herself).
+; I just like the color
 Type          magentalite   blacklite       bold
 StorageClass  tandark       blacklite       bold
 
 Special       cyandark      blacklite
+; Don Quixote: Out of the ordinary text- She's very loud and attention grabbing
 Delimeter     yellowlite    blacklite       reverse,bold
 
-Underlined    orangedark    blacklite       underline
-Error         redlite       whitelite       reverse
-Ignore        browndark     blacklite       strikethrough
-
-Added         yellowdark    blacklite
-Changed       bluelite      blacklite
-Removed       brownlite     blacklite
+; Ishmael: Adventuring to a new place (clicking a hyperlink)
+Underlined    orangelite    blacklite       underline
+; Gregor: Constantly pushed aside
+Ignore        browndark     whitelite       strikethrough
