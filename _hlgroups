@@ -1,0 +1,158 @@
+;;; Default Aliases
+lCursor         -> Cursor
+CursorIM        -> Cursor
+CursorColumn    -> ColorColumn
+CursorLine      -> ColorColumn
+
+LineNrAbove     -> LineNr
+LineNrBelow     -> LineNr
+
+CursorLineFold  -> CursorLine
+CursorLineSign  -> CurorLine
+
+MatchParen      -> IncSearch
+
+MoreMsg         -> ModeMsg
+
+NonText         -> EndOfBuffer
+
+Pmenu           -> Normal
+PemuSel         -> IncSearch
+PmenuKindSel    -> PmenuSel
+PmenuExtra      -> PmenuKind
+PmenuExtraSel   -> PmenuKindSel
+PmenuSbar       -> SignColumn
+PmenuMatch      -> IncSearch
+
+SpecialKey      -> EndOfBuffer
+
+TabLineFill     -> TabLine
+
+Terminal        -> Normal
+
+WildMenu        -> IncSearch
+
+;;; Special Aliases
+Number          -> Constant
+Character       -> Constant
+String          -> Constant
+Float           -> Number
+
+Conditional     -> Statement
+Repeat          -> Statement
+Label           -> Statement
+Keyword         -> Statement
+Exception       -> Statement
+
+Include         -> PreProc
+Define          -> PreProc
+Macro           -> PreProc
+
+Structure       -> Type
+Typedef         -> Type
+
+SpecialChar     -> Special
+SpecialComment  -> Delimeter
+Debug           -> Delimeter
+
+Todo            -> Delimeter
+;;; Default Groups
+Normal        whitedark     blacklite
+ColorColumn   whitelite     blackdark       bold
+Conceal       browndark     blacklite
+Cursor        whitedark     blacklite       reverse
+
+Directory     magentalite   blacklite       bold
+
+DiffAdd       yellowdark    blacklite       reverse
+DiffChange    bluedark      blacklite       reverse
+DiffDelete    brownlite     blacklite       reverse
+DiffText      greenlite     blacklite       reverse
+
+EndOfBuffer   greenlite     blacklite
+
+ErrorMsg      redlite       whitelite       reverse
+
+VertSplit     redlite       blackdark       reverse
+
+Folded        greendark     whitelite       reverse
+
+FoldColumn    greendark     blackdark
+
+SignColumn    orangelite    whitelite       reverse
+
+IncSearch     greenlite     yellowlite      reverse,bold
+
+LineNr        orangelite    blacklite      
+CursorLineNr  orangelite    blacklite        bold
+
+MessageWindow yellowdark    blacklite       italic
+
+ModeMsg       whitedark     blacklite       bold
+MsgArea       magentalite   blackdark
+
+PmenuKind     cyanlite      blackdark
+PmenuThumb    cyandark      blackdark       reverse
+
+PopupSelected yellowdark    bluedark        reverse
+PopupNotification
+              yellowdark    bluedark
+
+Question      bluelite      blacklite       italic
+
+QuickFixLine  yellowlite    blacklite       reverse
+
+Search        greenlite     yellowlite      reverse
+CurSearch     greenlite     yellowlite      bold
+
+SpellBad      redlite       blacklite       underline
+SpellCap      greendark     blacklite       underline
+SpellLocal    magentadark   blacklite       underline
+SpellRare     bluelite      blacklite       underline
+
+StatusLine    magentalite   whitelite       reverse,bold
+StatusLineNC  magentalite   whitelite       bold
+
+StatusLineTerm
+              tandark       whitedark       reverse,bold
+StatusLineTermNC
+              tandark       whitedark       bold
+
+TabLine       cyanlite      blackdark       reverse
+TabLineSel    cyanlite      blackdark       bold
+
+Title         reddark       blacklite
+
+Visual        magentadark   blacklite       reverse
+VisualNOS     browndark     whitelite       reverse,bold
+
+WarningMsg    yellowlite    blacklite
+
+;;; Special Groups
+Comment       greendark     blacklite
+
+Constant      cyanlite      blacklite
+Boolean       orangedark    blacklite
+
+Function      magentadark   blacklite       bold
+Identifier    tanlite       blacklite
+
+Statement     bluelite      blacklite
+Operator      greenlite     blacklite
+
+PreProc       reddark       blacklite
+PreCondit     reddark       blacklite       reverse,bold
+
+Type          magentalite   blacklite       bold
+StorageClass  tandark       blacklite       bold
+
+Special       cyandark      blacklite
+Delimeter     yellowlite    blacklite       reverse,bold
+
+Underlined    orangedark    blacklite       underline
+Error         redlite       whitelite       reverse
+Ignore        browndark     blacklite       strikethrough
+
+Added         yellowdark    blacklite
+Changed       bluelite      blacklite
+Removed       brownlite     blacklite

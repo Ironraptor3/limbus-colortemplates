@@ -1,0 +1,41 @@
+;;; Meta
+Full name:   Limbus Company UI Classic
+Short name:  limbus
+Description: A Limbus Company UI inspired ColorScheme
+Author:      Danny Ribaudo <dannyribaudo@gmail.com>
+License:     MIT
+Options:     backend=vim
+
+;;; Setup
+Environments: 256
+Background: dark
+
+;;; Blacks and Whites
+Include: _blackwhite
+
+;;; Main Colors
+Color: reddark      #820000 ~ ;;; Rodya
+Color: redlite      #cf0000 ~ ;;; Ryoshu
+Color: greendark    #325339 ~ ;;; Outis
+Color: greenlite    #8b9c15 ~ ;;; Sinclair
+Color: yellowdark   #d5be00 ~ ;;; Status Buff
+Color: yellowlite   #ffef23 ~ ;;; Don Quixote
+Color: bluedark     #293b95 ~ ;;; Meursault
+Color: bluelite     #26cfff ~ ;;; [On Use]
+Color: magentadark  #4e3076 ~ ;;; Heathcliff
+Color: magentalite  #f7abaf ~ ;;; Faust
+Color: cyandark     #94f140 ~ ;;; [On Hit]
+Color: cyanlite     #5bffde ~ ;;; Hong Lu
+
+Color: browndark    #69350b ~ ;;; Gregor
+Color: brownlite    #9f6a3a ~ ;;; Status Neutral
+Color: orangedark   #ff7e00 ~ ;;; [Clash Win]
+Color: orangelite   #ff9500 ~ ;;; Ishmael
+Color: tandark      #a86f3c ~ ;;; Text Special
+Color: tanlite      #eccca3 ~ ;;; Text Normal
+
+;;;Set Terminal Colors
+Include: _termcolors
+
+;;; All Highlightning Groups
+Include: _hlgroups
