@@ -19,6 +19,7 @@ jobs:
       run: |
         sudo apt update
         sudo apt install -y vim
+        vim --version
     - name: Make local .vim/ folders
       run: mkdir -pv $HOME/.vim/pack $HOME/.vim/colors
     - name: Checkout vim-devel
