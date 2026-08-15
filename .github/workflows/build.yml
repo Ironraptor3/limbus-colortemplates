@@ -21,14 +21,10 @@ jobs:
         mkdir -pv $HOME/.vim/pack $HOME/.vim/colors
         echo "filetype plugin on" > $HOME/.vimrc
         vim --version
-    - name: Checkout Colortemplate
-      uses: actions/checkout@v4
-      with:
-          repository: lifepillar/vim-colortemplate
-          github-server-url: https://codeberg.org
-          path: colortemplate
-    - name: Move colortemplate to vim pack
-      run: mv colortemplate $HOME/.vim/pack/colortemplate
+    - name: Clone and move colortemplate to vim pack
+      run: |
+        git clone https://codeberg.org/lifepillar/vim-colortemplate colortemplate
+        mv colortemplate $HOME/.vim/pack/colortemplate
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
