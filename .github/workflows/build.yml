@@ -25,9 +25,9 @@ jobs:
       uses: actions/checkout@v4
       with:
           repository: lifepillar/vim-devel
-          path: vim-devel/
-    - name: Move vim-devel to vim pack
-      run: mv vim-devel $HOME/.vim/pack/vim-devel
+          path: devel/
+    - name: Move devel to vim pack
+      run: mv devel $HOME/.vim/pack/devel
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
