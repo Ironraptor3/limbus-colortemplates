@@ -15,13 +15,12 @@ jobs:
     steps:
     - name: Checkout this repo
       uses: actions/checkout@v4
-    - name: Install vim
+    - name: Install vim, setup environment
       run: |
         sudo apt update
         sudo apt install -y vim
-        vim --version
-    - name: Make local .vim/ folders
-      run: mkdir -pv $HOME/.vim/pack $HOME/.vim/colors
+        mkdir -pv $HOME/.vim/pack $HOME/.vim/colors
+        echo "filetype plugin on" > $HOME/.vimrc
     - name: Checkout vim-devel
       uses: actions/checkout@v4
       with:
@@ -39,13 +38,11 @@ jobs:
       run: |
         ./build_install.sh --name limbus
     - name: Zip results
-      run: cd $HOME/.vim && zip -r colors colors
-    - name: Move asset where next action can see
-      run: mv $HOME/.vim/colors.zip latest_colors.zip
+      run: |
+        cd $HOME/.vim && zip -r colors colors && mv $HOME/.vim/colors.zip latest_colors.zip
     - name: Upload files to a GitHub release
       uses: svenstaro/upload-release-action@2.11.5
       with:
         file: latest_colors.zip
         tag: testing
         overwrite: true
-      
