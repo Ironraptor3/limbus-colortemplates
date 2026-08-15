@@ -3,9 +3,10 @@
 
 name: Node.js CI
 
-on: workflow_dispatch
-#  push:
-#    branches: [ "trunk" ]
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "trunk" ]
 
 jobs:
   build:
@@ -19,16 +20,14 @@ jobs:
         sudo apt update
         sudo apt install -y vim
     - name: Make local .vim/ folders
-      run: mkdir -pv $HOME/.vim/packs $HOME/.vim/colors
+      run: mkdir -pv $HOME/.vim/pack $HOME/.vim/colors
     - name: Checkout vim-devel
       uses: actions/checkout@v4
       with:
           repository: lifepillar/vim-devel
           path: vim-devel/
-    - name: Move vim-devel to vim packs
-      run: mv vim-devel $HOME/.vim/packs/vim-devel
-    - name: dbg
-      run: ls -Ra $HOME/.vim
+    - name: Move vim-devel to vim pack
+      run: mv vim-devel $HOME/.vim/pack/vim-devel
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
@@ -40,11 +39,12 @@ jobs:
         ./build_install.sh --name limbus
     - name: Zip results
       run: cd $HOME/.vim && zip -r colors colors
+    - name: Move asset where next action can see
+      run: mv $HOME/.vim/colors.zip latest_colors.zip
     - name: Upload files to a GitHub release
       uses: svenstaro/upload-release-action@2.11.5
       with:
-        file: $HOME/.vim/colors.zip
+        file: latest_colors.zip
         tag: testing
-        asset_name: latest_colors.zip
         overwrite: true
       
