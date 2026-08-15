@@ -103,7 +103,7 @@ FoldColumn    greendark     blackdark
 SignColumn    orangelite    whitelite       reverse
 
 ; Hong Lu: Searching with the precious jade eye
-IncSearch     cyanlite      whitelite       reverse,bold
+IncSearch     cyanlite      blacklite       reverse,bold
 
 ; Ishamel: Charting a course (line numbers help navigation)
 LineNr        orangelite    blacklite      
@@ -129,8 +129,8 @@ Question      bluelite      blacklite       italic
 QuickFixLine  yellowlite    blacklite       reverse
 
 ; Hong Lu: Same as above (searching with the precious jade eye)
-Search        cyanlite      whitelite       reverse
-CurSearch     cyanlite      whitelite       bold
+Search        cyanlite      blacklite       reverse,italic
+CurSearch     cyanlite      blacklite       bold
 
 ; Rodion: Same color as error text...
 SpellBad      reddark       whitelite       underline
