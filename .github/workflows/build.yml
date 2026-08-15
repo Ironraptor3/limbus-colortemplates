@@ -19,16 +19,16 @@ jobs:
         sudo apt update
         sudo apt install -y vim
     - name: Make local .vim/ folders
-      run: mkdir -pv $HOME/.vim/packs $HOME/.vim/colors packs
+      run: mkdir -pv $HOME/.vim/packs $HOME/.vim/colors
     - name: Checkout vim-devel
       uses: actions/checkout@v4
       with:
           repository: lifepillar/vim-devel
-          path: packs/
+          path: vim-devel/
     - name: Move vim-devel to vim packs
-      run: mv packs/* $HOME/.vim/packs
+      run: mv vim-devel $HOME/.vim/packs/vim-devel
     - name: dbg
-      run: ls -Ra $HOME
+      run: ls -Ra $HOME/.vim
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
