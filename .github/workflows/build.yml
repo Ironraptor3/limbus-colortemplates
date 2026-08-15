@@ -1,0 +1,47 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "trunk" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout this repo
+      uses: actions/checkout@v4
+    - name: Install vim
+      run: |
+        sudo apt update
+        sudo apt install -y vim
+    - name: Make local .vim/ folders
+      run: |
+        mkdir -p ${HOME}/.vim/packs
+        mkdir -p ${HOME/.vim/colors
+    - name: Checkout vim-devel
+      uses: actions/checkout@v4
+      with:
+          name: lifepillar/vim-devel
+          path: ${HOME}/.vim/packs/
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        cache: 'npm'
+    - name: Clean install Node dependencies
+      run: npm ci
+    - name: Build all colors (including the base limbus colorscheme)
+      run: |
+        ./build_install --name limbus
+    - name: Zip results
+      run: cd ${HOME}/.vim && zip -r colors colors
+    - name: Upload files to a GitHub release
+      uses: svenstaro/upload-release-action@2.11.5
+      with:
+        file: ${HOME}/.vim/colors.zip
+        asset_name: latest_colors.zip
+        overwrite: true
+      
