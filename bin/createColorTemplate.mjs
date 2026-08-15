@@ -100,7 +100,12 @@ if (import.meta.url === pathToFileURL(process.argv[1]).href) {
       default: "limbus.colortemplate",
       description: "The colortemplate to modify the colors of"
     })
+    .exitProcess(false)
     .parse()
+
+  if (args.help) {
+    process.exit(1);
+  }
 
   await createColorTemplate(args.template, args.name,
     args.e,
