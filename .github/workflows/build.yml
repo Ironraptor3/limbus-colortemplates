@@ -37,9 +37,11 @@ jobs:
     - name: Build all colors (including the base limbus colorscheme)
       run: |
         ./build_install.sh --name limbus
+        vim "+Colortemplate! ~/.vimrc" limbus.colortemplate
     - name: Zip results
       run: |
-        cd $HOME/.vim && zip -r colors colors && mv $HOME/.vim/colors.zip latest_colors.zip
+        cd $HOME/.vim && zip -r colors colors
+        mv $HOME/.vim/colors.zip latest_colors.zip
     - name: Upload files to a GitHub release
       uses: svenstaro/upload-release-action@2.11.5
       with:
