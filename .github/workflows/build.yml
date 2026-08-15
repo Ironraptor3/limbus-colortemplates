@@ -25,7 +25,7 @@ jobs:
       uses: actions/checkout@v4
       with:
           repository: lifepillar/vim-colortemplate
-          url: https://codeberg.org
+          github-server-url: https://codeberg.org
           path: colortemplate
     - name: Move colortemplate to vim pack
       run: mv colortemplate $HOME/.vim/pack/colortemplate
