@@ -21,7 +21,7 @@ jobs:
     - name: Make local .vim/ folders
       run: |
         mkdir -p ${HOME}/.vim/packs
-        mkdir -p ${HOME/.vim/colors
+        mkdir -p ${HOME}/.vim/colors
     - name: Checkout vim-devel
       uses: actions/checkout@v4
       with:
