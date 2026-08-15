@@ -35,7 +35,7 @@ jobs:
       run: npm ci
     - name: Build all colors (including the base limbus colorscheme)
       run: |
-        ./build_install --name limbus
+        ./build_install.sh --name limbus
     - name: Zip results
       run: cd ${HOME}/.vim && zip -r colors colors
     - name: Upload files to a GitHub release
