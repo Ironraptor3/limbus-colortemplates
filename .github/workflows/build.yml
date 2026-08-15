@@ -20,8 +20,8 @@ jobs:
         sudo apt install -y vim
     - name: Make local .vim/ folders
       run: |
-        mkdir -p ${HOME}/.vim/packs
-        mkdir -p ${HOME}/.vim/colors
+        mkdir -p $HOME/.vim/packs
+        mkdir -p $HOME/.vim/colors
         mkdir -p packs
     - name: Checkout vim-devel
       uses: actions/checkout@v4
@@ -29,7 +29,9 @@ jobs:
           repository: lifepillar/vim-devel
           path: packs/
     - name: Move vim-devel to vim packs
-      run: mv packs/* ${HOME}/.vim/packs
+      run: mv packs/* $HOME/.vim/packs
+    - name: dbg
+      run: ls -R $HOME
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
@@ -40,11 +42,11 @@ jobs:
       run: |
         ./build_install.sh --name limbus
     - name: Zip results
-      run: cd ${HOME}/.vim && zip -r colors colors
+      run: cd $HOME/.vim && zip -r colors colors
     - name: Upload files to a GitHub release
       uses: svenstaro/upload-release-action@2.11.5
       with:
-        file: ${HOME}/.vim/colors.zip
+        file: $HOME/.vim/colors.zip
         tag: testing
         asset_name: latest_colors.zip
         overwrite: true
