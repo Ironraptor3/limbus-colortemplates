@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "culori": "^4.0.2"
+    "culori": "^4.0.2",
+    "yargs": "^18.1.0"
   }
 }
