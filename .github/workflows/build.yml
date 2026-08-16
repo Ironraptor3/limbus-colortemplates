@@ -15,16 +15,13 @@ jobs:
     steps:
     - name: Checkout this repo
       uses: actions/checkout@v4
-    - name: Install vim, setup environment
+    - name: Install vim, get color template, setup environment
       run: |
         sudo apt install -y vim
-        mkdir -pv $HOME/.vim/pack $HOME/.vim/colors
-        echo "filetype plugin on" > $HOME/.vimrc
         vim --version
-    - name: Clone and move colortemplate to vim pack
-      run: |
-        git clone https://codeberg.org/lifepillar/vim-colortemplate colortemplate
-        mv colortemplate $HOME/.vim/pack/colortemplate
+        echo "filetype plugin on" > $HOME/.vimrc
+        mkdir -pv $HOME/.vim/pack/colortemplate/start $HOME/.vim/colors 
+        git clone https://codeberg.org/lifepillar/vim-colortemplate $HOME/.vim/pack/colortemplate/start/colortemplate
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
