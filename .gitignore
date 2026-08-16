@@ -1,2 +1,6 @@
 *.colortemplate
+
+*.vim
+*.zip
+
 !limbus.colortemplate
