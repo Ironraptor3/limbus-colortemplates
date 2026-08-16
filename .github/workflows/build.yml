@@ -15,21 +15,17 @@ jobs:
     steps:
     - name: Checkout this repo
       uses: actions/checkout@v4
-    - name: Install vim, setup environment
-      run: |
-        sudo apt install -y vim
-        vim --version
-        echo "filetype plugin on" > $HOME/.vimrc
-        mkdir -pv $HOME/.vim/pack $HOME/.vim/colors
+    - name: Install vim
+      uses: rhysd/action-setup-vim@v1
+    - name: Setup environment
+      run:  mkdir -pv $HOME/.vim/pack $HOME/.vim/colors
     - name: Install vim-devel
       uses: actions/checkout@v4
       with:
         repository: lifepillar/vim-devel
         path: vim-devel
-    - name: Fix vim-devel... gh does not like overriding the string() fcn in its vim installation
-      run: |
-        find vim-devel -name "*.vim" | xargs sed -i "s/def string/def BadString/"
-        mv vim-devel $HOME/.vim/pack/devel
+    - name: Move module to packs
+      run: mv vim-devel $HOME/.vim/pack/devel
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
